@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aggun\\source\\repos\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi.csproj",
+      "projectUniqueName": "C:\\Users\\aggun\\OneDrive\\Masaüstü\\BootCamp\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi.csproj",
       "projectName": "BootcampInterestCalculationApi",
-      "projectPath": "C:\\Users\\aggun\\source\\repos\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi.csproj",
+      "projectPath": "C:\\Users\\aggun\\OneDrive\\Masaüstü\\BootCamp\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi.csproj",
       "packagesPath": "C:\\Users\\aggun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aggun\\source\\repos\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\obj\\",
+      "outputPath": "C:\\Users\\aggun\\OneDrive\\Masaüstü\\BootCamp\\BootcampInterestCalculationApi\\BootcampInterestCalculationApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -259,7 +259,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
