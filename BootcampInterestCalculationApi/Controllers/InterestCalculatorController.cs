@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BootcampInterestCalculationApi.Controllers
@@ -17,21 +15,23 @@ namespace BootcampInterestCalculationApi.Controllers
         //Faiz oranı property'si sayısal değer ve boş geçilemez olduğunu ifade eden validasyon
         [Required(ErrorMessage = "Please enter number ")]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter valid number")]
-        public double InterestAmount { get; set; }
+        public double InterestRate { get; set; }
 
         //Vade süresi property'si sayısal değer ve boş geçilemez olduğunu ifade eden validasyon
         [Required(ErrorMessage = "Please enter number ")]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter valid number")]
         public double Time { get; set; }
     }
+
     //Post edilen verilerin sonucu oluşan faiz sonucunu ve giriş değişkenlerini veren sınıf.
     public class InterestResult
     {
-        //Faiz oranı
-        public double InterestAmount { get; set; }
-
         //Faiz sonu anapara
         public double TotalBalance { get; set; }
+
+        //Faiz Kazancı
+        public double InterestAmount { get; set; }
+
     }
 
     [ApiController]
@@ -45,11 +45,11 @@ namespace BootcampInterestCalculationApi.Controllers
             //Sınıf newlenerek içindeki property'lere erişilir.
             InterestResult interestResult = new();
 
-            //Girilen faiz oranının sonuç sınıfındaki property'e eşitlenmesi.       
-            interestResult.InterestAmount = interestValue.InterestAmount;
-
             //Vade sonucunun sonuç sınıfındaki property'e eşitlenmesi.   
-            interestResult.TotalBalance = interestValue.Balance * Math.Pow((1 + (interestValue.InterestAmount / 100)), interestValue.Time);
+            interestResult.TotalBalance = interestValue.Balance * Math.Pow((1 + (interestValue.InterestRate / 100)), interestValue.Time);
+
+           //Faiz kazancı hesabı için vade sonu paranın ana paradan çıkartılması.
+            interestResult.InterestAmount = interestResult.TotalBalance - interestValue.Balance;
 
             //Sonuç sınıfının response edilmesi.
             return interestResult;
